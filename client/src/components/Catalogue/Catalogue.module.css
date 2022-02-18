@@ -1,0 +1,38 @@
+.CatalogueWrapper {
+  margin-top: 6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.MediaItem {
+  cursor: pointer;
+  padding: 22px 20px;
+  font-size: large;
+  border: 2px #c4c4c4 solid;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.MediaItem:hover {
+  color: #111111;
+  background-color: #c4c4c4;
+}
+
+@media screen and (max-width: 1200px) {
+  .CatalogueWrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .CatalogueWrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .CatalogueWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
