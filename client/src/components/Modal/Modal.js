@@ -6,7 +6,7 @@ import { doFetchMedia } from '../../actions/actions'
 import {GrClose} from 'react-icons/gr'
 import {MdOutlineSlowMotionVideo} from 'react-icons/md'
 
-import Poster from '../../assets/anime.png'
+import Poster from '../../assets/avengers.jpg'
 
 import styles from './Modal.module.css'
 
