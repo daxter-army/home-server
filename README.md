@@ -10,9 +10,15 @@
     <img src="./readme-media/screenshot1.png" alt="screenshot two" title="media card" width="80%"/>
 </p>
 
-## run (development)
+## run on your machine
 
 - Node 14.x should be installed
+
+### set up your media database
+
+- In the project directory, create a folder named `database`, and then in it, create individual folders, for one movie/web series, and follow naming convention like this, **Avengers Endgame MOVIE\*** or for web series, do it like **True Detectives WEB SERIES**, or for your anime, do it like **Death Note ANIME**, and then in the folder, place yoiur media files.
+
+### fire up the server
 
 - Go to the base project directory and run
   ```
