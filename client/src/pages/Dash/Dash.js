@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { CSSTransition } from "react-transition-group" 
 
 import Filter from '../../components/Filter/Filter'
 import Catalogue from '../../components/Catalogue/Catalogue'
@@ -9,8 +10,10 @@ import { doFetchCatalogue } from '../../actions/actions'
 import { categories } from '../../data'
 
 import styles from './Dash.module.css'
+import './Dash.css'
 
 const Dash = () => {
+    const modalRef = useRef()
     const dispatch = useDispatch()
     const { loading, data, error } = useSelector(state => state.catalogueState)
 
@@ -58,7 +61,6 @@ const Dash = () => {
         setFilter(filterMedia)
     }
 
-
     return (
         <>
         <div className={styles.DashWrapper}>
@@ -82,7 +84,16 @@ const Dash = () => {
             }
         </div>
         {
-            modal.status && modal.state === 'MEDIA_INFO_MODAL' && <Modal modalClicker={modalHandler}>{modal.data}</Modal>
+            <CSSTransition
+                in={modal.status && modal.state === 'MEDIA_INFO_MODAL'}
+                appear={true}
+                timeout={200}
+                nodeRef={modalRef}
+                classNames="my-node"
+                unmountOnExit
+            >
+                <Modal ref={modalRef} modalClicker={modalHandler}>{modal.data}</Modal>
+            </CSSTransition>
         }
         </>
     )
